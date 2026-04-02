@@ -220,7 +220,7 @@ const handleMovieSearch = async (keyword) => {
       "keyword"
     );
     if (hasKeyword) {
-      window.location.href = "/";
+      window.location.href = "/javascript-movie-review/";
     }
     return;
   }
@@ -346,7 +346,7 @@ const mainSeeMoreButton = document.getElementById("main-see-more-button");
 const searchSeeMoreButton = document.getElementById("search-see-more-button");
 if (logo) {
   logo.addEventListener("click", () => {
-    window.location.href = "/";
+    window.location.href = "/javascript-movie-review/";
   });
 }
 if (searchInput && searchButton) {
