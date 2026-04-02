@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 리뷰</title>
+    <script type="module" crossorigin src="/javascript-movie-review/assets/index-CfoIhgpl.js"></script>
+    <link rel="stylesheet" crossorigin href="/javascript-movie-review/assets/index-CQ--iQnG.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="logo-input-wrapper">
+          <button class="logo" id="logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAAUCAYAAACtZULwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUdSURBVHgB7VrhcRsrEP6cyX+rBFyBlQpMKrBeBZYreHYFUip4cgVSKkhSgXgVRKlApAKrAx77AA+3t3CcpHGcmXwzjO5gF5Zd2GU5XTjnlgDsxcXFxj9r/0xl5csDulh5mgOrQ+Qfgsj72vCyOl7n5brAifDdKv+zZ9Ub3/V9ZWzS+RVeEy7g2ZetL/v4rlwfWuCdujYovAFIguEMKOhrPTD2HmdElEHnhdO8z56VL5NKf1NfjFD3B28DS1/usnfrS8dzJGPvvEv56IJLXhQ6uxbqfjdjf8KvAx/71cNaMraKhr6p0GqhrkZfhR+PvIhC36NYXw5+8e0E+o7n8TS20rdEu0G7bNMoW8Ihlt2R548Nez8UxlWQvaxFXS+XQn+qM54rxFgX4jjHhHXWi0Ol/jIeivNbN4y9L4uM70GgmUOAr18LtBPXl2/P+HSjbN99meVKFWh4zN6z9m1usCjzc8PYe9fVy9y1Yfsu8hgE//6UyWcFPU5zxQjtO1TggtFpkhrDINplphQj0JQ8i2bvZmg3urBwWmUjPXzJDX4iaGHMUT8zJSgEvTxgJJKxk/vIXcG/Av208FzjybFG24Ry0G6bRffFDdZTtqfl7pfwGcNYYDz+wYlwwVses2j+xkgkY5OCaFXPszZpl14XnhMsCoi7WgtN5E3uY3ks9HEbf7+x+onrp3Va4DeoIHopxaqtLx8RPB6VD+jLptzpaaW0aWw2bhqb20PF3wPKerdZeYnZFINoB23iO01CyqFfYlzkyfHs5NiV+tNC/VcuXaGPfWyT4tMD49+y9u9Z235Ev0tBtqVAN3cnxGwn62UrjL0R6NTQ3HK8Z6vgOb2Q2/QMtGpyt0uTmsT4x1dkNV6jv3NEHjo1u/5dR5KBFseatWmEG7/kEjVrb3HhSqi79f3dNNCdCklvOhqL2n4geKZlLC8oZSMlJGOT4fYFQTSrmzr54ukHzgeLrmL/NzYtMj+2YTLlBtFCXwbHofUOQeEExDnRgrwT+qVC8TydJ8geFPbMWEMTUsy2CEm/Ye2SAaeQFWFQx9iDWQn8EEhxO8lzy9osz0vfIryMcwT92wFSmid5tq2Ts6Eq0s4mpSxjnNJZe+mQJhnOoo4DzgOD/slZQ/ZCBqeNYxvozrKYSP8IKZVGmAd5LDKupGuFkPpdjbngScZOMYJ3bAQeLdQdYoxXGIfSble8//TgxzHCWeI2unfO1xKvO/1n+ObHWqEB7oQTeeRVrHoVjZ9SSSoL9EMbufgNGpGMnY7vCpkS42Gpd0gT+mlZ3RJN71LEyRcVnNegm5uSMjSjoQVo0IZDQbYVk+0L+jnxX5DnNvP0PxHiq0EZS/Tj9VWSKYahtJG4R6uFRhUzgp+pouVDiOQeOVoOZxZhArmA0+hRbHxPd9JD/VPczpVOfAuBphVGqJsxZV1CvvxId+YcuUwGZVihbu3H5vLfQR47geykWPu88xZzst737Kx95YYxi7TFPDu2L91xUExm1cAzZxOv5qKu7U7cVfhL99rLwti1PLsVOht/ULfvMl0oyG7hWBctYYXxB5pPPM2I73aA7yvG4R5tB7Icj9nzE45AdPHH8H5m4YF0a2sM5MaJgdz4owu7gdxF7h4M6m7owIwh0ab4Q78f4jiUJikUPnEiuOFNJXV6Qj/VSih9htyhq5CX53g+oWtJ8lJ3mWxokS1mM9R+w/hsYeycl77opXB5DXnjpXBhaHz6G1neGOd75YKXpX4umRz4Dz1my31xwGpxAAAAAElFTkSuQmCC" alt="MovieList" />
+          </button>
+          <div class="movie-search">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="검색어를 입력하세요"
+              autocomplete="off"
+            />
+            <button id="search-button">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAALZJREFUeAGtkQENwzAMBK0hCIMFQiAUwiAUQhm0TDoGgVAIg5Ax6Bhk3vaVflUcRVVfekWK7XPsiJypnLNTj+qUf1rVUR1aigMKLI21Yk9dF3VH9xNBBgswIyEa8WEbyQI8kGDOSi8MpeBXUpGG70jr+f6C84UkV2FccT5L9AX0ScrdPS3SlRI6a9P43oTYLJZ23/UpiPQyvvc1SE/dNq2ApyYIjXSDHe2hHWKA/yByRAQ5BtjrDXDaZj4YxEyHAAAAAElFTkSuQmCC" alt="검색" />
+            </button>
+          </div>
+        </div>
+        <div class="background-container" id="background-container">
+          <div class="overlay" aria-hidden="true"></div>
+          <div class="top-rated-container">
+            <div class="top-rated-movie">
+              <div class="rate">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAxCAYAAACcXioiAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQ4SURBVHgB7VlNctMwFP7UwrRl0/YGzgloNwyURd0TQE5AeoK2J2hyAuAEaU9QOEHMgvCzSW9QcwLChqbDNOI9RVEk106sWGZY5JvR+FlRJD29fxlYYYX/F/I79uQXxKgRAjWANh3Ro0ct0l0ptSPxQj2DYg31oIvZ5qHpLmpAcAno07+ZdWBIq+zoN5ZCgoCoQwLnhhK4oBUS8y7xGoFRhwT49CP9eqSfPb3aEBtoiH16BkJQCdDmW7AMl9VFq0w6GUCqdKvGBENoFXpj0R2LvjSUwCsERDAGtPHGVldiqBHeWf0xxwcEQkgJOMZr+3xxpHQ+Mb//CWfMIRmIDSUtlZlhplLrOJED41orIQgDecabHaP6pPY+E2OOEQChJFBkvC4E3lv0CQIgNw4o8Y6UiCNicQdjanxqQrVtQ0s9xk0bGkU5j+zR+E38tFa/1pF6aD1/GXrqfteJfkySzYkfImfjV8CS4mXjfY7jeUNkn+YXSxvxBR3Amc3II+fnEd4CS+tmQlH2bOGoO2JwC8umFS3aI8MckiuBPol3lnilqs3EyfjxQORjak/yxTsPStq/tYraKikMvY2pak769/SOhyTl3ek8j+aswb68g5qgGb4uM1Z+oxgzzg9+rheyvQTQll9xFcpfLwNeW9nMGG2r+4M9xmWAQ760BrCejjDQacI/hVqT1nYMXtDeMnYmCv7chp0asC2soymelRN5VcjPpC5ryhtGpnOMjnjpSEIhN5CR7reJNZvTCPckiT5OUTNIbU9oVwPYm5fkOnM2z5hb0OSeBNlGXcatjbVtdaX03qTNF0p+YUWWc8Mw1cXjUJWVchS3VPS7+s5RurnoJqNUSalSgI3MAnw6m9ivyoSO/lmVuaRgd1pm7lLJHOfz4gBNuIlaFKQ8HKlDicw7G+sBWmUPxisbVcYtrVixhqeojtiiO0XGWgT/dFqoED+BpNSiOlJrPu+g6c+AdEJ6gupIDLVEwe91L5S9dSOVqnyvpB3EjUkiN7Hr4xj8JBD+9CcFv7D8/MgvzfZjwBXxp0XDPa7XZ3NJvysXXxuILTopGsSbppRgwOkHvfb4unFBQpgYytMOSuuwo/+ZosKM4aB0R+mALMiZJGW7lLLnRddMMdUo+y3BRwKxtZEHuYlSFY6o9ualrtymEOq3nr6GcSGcOWOUhA8Dh5ht7KMhSTLUOFdy8yVWC4F91eBcdPGYLv2n66iVNSf95xAlsZwE9Gmp1FcqPY+tjQxpVk7C1Ccl3VqYFOKpNR/39UyKbktAlpeAjw1I65Xv/c+RFTWnGVuUbhf4cX3ibbgXYYxUzSlVBeZlBz4M9FCsmym147Kfj9Tt9P2DOiOLUgz4qFCnsJ/Tao9vX1ya0vjGnDnTsl7IL5XoU5Sc3GlGyhNR2Vn106lSK6lu66YBLEVNn2RrBZevqoRdYYUVvPAXJrOCc9SFL6sAAAAASUVORK5CYII=" class="star" />
+                <span class="rate-value"></span>
+              </div>
+              <h3 class="title"></h3>
+              <button class="primary detail">자세히 보기</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <main>
+          <section id="result-section">
+            <h2 class="sub-title" id="sub-title">지금 인기 있는 영화</h2>
+
+            <ul class="thumbnail-list hidden" id="main-thumbnail-list"></ul>
+            <ul class="thumbnail-list hidden" id="search-thumbnail-list"></ul>
+
+            <ul class="thumbnail-list hidden" id="skeleton-list">
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+              <li class="skeleton">
+                <div class="item">
+                  <div class="thumbnail"></div>
+                  <div class="item-desc">
+                    <p class="rate"></p>
+                    <p class="title"></p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="unexpected-container hidden" id="empty-container">
+              <img src="/javascript-movie-review/assets/%EC%9C%BC%EC%95%84%EC%95%84%ED%96%89%EC%84%B1%EC%9D%B4-9C2OvmM-.png" alt="" />
+              <p>검색 결과가 없습니다.</p>
+            </div>
+
+            <div class="unexpected-container hidden" id="error-container">
+              <img src="/javascript-movie-review/assets/%EC%9C%BC%EC%95%84%EC%95%84%ED%96%89%EC%84%B1%EC%9D%B4-9C2OvmM-.png" alt="" />
+              <p>🚨 에러 발생 🚨</p>
+              <button>재시도</button>
+            </div>
+
+            <button class="see-more-button hidden" id="main-see-more-button">
+              더 보기
+            </button>
+            <button class="see-more-button hidden" id="search-see-more-button">
+              더 보기
+            </button>
+          </section>
+        </main>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 우아한테크코스 All Rights Reserved.</p>
+        <p>
+          <img src="/javascript-movie-review/assets/woowacourse_logo-C2VvP7wQ.png" width="180" />
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<!--
+  포스터 원본: https://image.tmdb.org/t/p/original//pmemGuhr450DK8GiTT44mgwWCP7.jpg
+  포스터 썸네일: https://media.themoviedb.org/t/p/w440_and_h660_face/pmemGuhr450DK8GiTT44mgwWCP7.jpg
+  배너 원본: https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg
+-->
