@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>영화 리뷰</title>
-    <script type="module" crossorigin src="/javascript-movie-review/assets/index-DlRq0osU.js"></script>
-    <link rel="stylesheet" crossorigin href="/javascript-movie-review/assets/index-CQ--iQnG.css">
+    <script type="module" crossorigin src="/javascript-movie-review/assets/index-D_vWEY3q.js"></script>
+    <link rel="stylesheet" crossorigin href="/javascript-movie-review/assets/index-uJpAH6aR.css">
   </head>
   <body>
     <div id="app">
@@ -47,7 +47,7 @@
 
             <ul class="thumbnail-list hidden" id="main-thumbnail-list"></ul>
             <ul class="thumbnail-list hidden" id="search-thumbnail-list"></ul>
-
+            <div id="main-error-container"></div>
             <ul class="thumbnail-list hidden" id="skeleton-list">
               <li class="skeleton">
                 <div class="item">
@@ -206,13 +206,87 @@
           </section>
         </main>
       </div>
-
+      <div id="sentinel"></div>
       <footer class="footer">
         <p>&copy; 우아한테크코스 All Rights Reserved.</p>
         <p>
           <img src="./images/woowacourse_logo.png" width="180" />
         </p>
       </footer>
+    </div>
+    <div class="modal-background active" id="modalBackground">
+      <div class="modal" id="modal">
+        <button class="close-modal" id="closeModal">
+          <img src="./images/modal_button_close.png" />
+        </button>
+        <div class="modal-container">
+          <div class="modal-image modal-skeleton-image" id="modal-image">
+            <img src="" alt="" />
+          </div>
+          <div class="modal-description" id="modal-description">
+            <div class="modal-header">
+              <h2
+                id="modal-title"
+                class="modal-skeleton modal-skeleton-title"
+              ></h2>
+              <p
+                id="modal-category"
+                class="modal-skeleton modal-skeleton-category"
+              ></p>
+              <p class="rate">
+                <img src="./images/star_filled.png" class="star" /><span
+                  id="modal-rate"
+                  class="modal-skeleton modal-skeleton-rate"
+                ></span>
+              </p>
+            </div>
+            <hr />
+            <h3 id="modal-my-rate" class="modal-sub-title">내 별점</h3>
+            <p id="modal-rate-stars" class="modal-rate-stars">
+              <img
+                src="./images/star_empty.png"
+                class="modal-my-rate-star"
+                id="modal-my-rate-star-1"
+              />
+              <img
+                src="./images/star_empty.png"
+                class="modal-my-rate-star"
+                id="modal-my-rate-star-2"
+              />
+              <img
+                src="./images/star_empty.png"
+                class="modal-my-rate-star"
+                id="modal-my-rate-star-3"
+              />
+              <img
+                src="./images/star_empty.png"
+                class="modal-my-rate-star"
+                id="modal-my-rate-star-4"
+              />
+              <img
+                src="./images/star_empty.png"
+                class="modal-my-rate-star"
+                id="modal-my-rate-star-5"
+              />
+              <span>
+                <span class="modal-rate-review" id="modal-rate-review"
+                  >명작이에요</span
+                >
+                <span class="modal-rate-points" id="modal-rate-points"
+                  >(8/10)</span
+                ></span
+              >
+            </p>
+            <hr />
+            <h3 id="modal-detail-title" class="modal-sub-title">줄거리</h3>
+            <p
+              class="detail"
+              id="modal-detail"
+              class="modal-skeleton modal-skeleton-detail"
+            ></p>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
